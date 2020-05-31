@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');//devolve uma
+    return view('welcome');//devolve  o que vc ta pedindo la no browser()
 });
