@@ -1,7 +1,4 @@
-GET http://localhost:8000/api/alunos
+http://localhost:8000/api/alunos/1
 
-###
-
-GET http://localhost:8000/api/alunos/9
 
 

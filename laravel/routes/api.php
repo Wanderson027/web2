@@ -1,5 +1,5 @@
 <?php
-use App\Alunos;
+use App\Vendedor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,10 +19,8 @@ use Illuminate\Support\Facades\Route;
     
     });*/
 
-    //  Route::GET('/alunos', 'AlunosController@index');
-    
-    Route::GET('/alunos', 'AlunosController@index');//chama a controler e o metodo
-    Route::GET('/alunos/{id}', 'AlunosController@show'); 
-    Route::GET('/alunos', 'AlunosController@create');
-    Route::DELETE('/alunos/{id}', 'AlunosController@excluir');
-    Route::PUT('alunos/{id}', 'AlunosController@atualizar');
+    Route::GET('/vendedores', 'VendedorController@index');//chama a controler e o metodo
+    Route::GET('/vendedores/{id}', 'VendedorController@findVendendorById');
+    Route::GET('/vendedores', 'VendedorController@criarVendedor');
+    Route::DELETE('/vendedores', 'VendedorController@excluirVendedor');
+    Route::PUT('vendedores/{id}', 'VendedorController@atualizarVendedor');
