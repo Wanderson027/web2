@@ -11,11 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { TopoComponent } from './topo/topo.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
-import { AlunoComponent } from './aluno/aluno.component';
+import { FuncionarioComponent } from './funcionario/funcionario.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
@@ -27,8 +26,7 @@ import {ButtonModule} from 'primeng/button';
   declarations: [
     AppComponent,
     MenuComponent,
-    TopoComponent,
-    AlunoComponent,
+    FuncionarioComponent,
   ],
   imports: [
     BrowserModule,

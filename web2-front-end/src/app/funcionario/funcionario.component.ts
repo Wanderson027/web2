@@ -3,14 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
-  selector: 'app-aluno',
-  templateUrl: './aluno.component.html',
-  styleUrls: ['./aluno.component.css']
+  selector: 'app-funcionario',
+  templateUrl: './funcionario.component.html',
+  styleUrls: ['./funcionario.component.css']
 })
-export class AlunoComponent implements OnInit {
+export class FuncionarioComponent implements OnInit {
 
-  private API_URL = 'http://127.0.0.1:8000/api/vendedores';
-  public Vendedores;
+  private API_URL = 'http://127.0.0.1:8000/api/funcionarios';
+  public Funcionarios;
 
   constructor(
     private http: HttpClient
@@ -19,15 +19,15 @@ export class AlunoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listarAlunos();
+    this.listarFuncionarios();
   }
 
 
-  private listarAlunos(){
+  private listarFuncionarios(){
     this.http.get(this.API_URL).subscribe(
       res=>{
-        this.Vendedores = res;
-        console.log(this.Vendedores);
+        this.Funcionarios = res;
+        console.log(this.Funcionarios);
        
       }
     )

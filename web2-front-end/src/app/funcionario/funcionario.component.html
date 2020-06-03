@@ -1,4 +1,4 @@
-<p-fieldset legend="Cadastrar Vendedor">
+<p-fieldset legend="Cadastrar Funcionario">
     <div class="ui-g-12">   
         <div class="ui-g-4">
            <span class="ui-float-label">
@@ -32,7 +32,7 @@
        </div>
     </div> 
     <div>
-        <p-table [value]="Vendedores">
+        <p-table [value]="Funcionarios">
             <ng-template pTemplate="header">
                 <tr>
                     <th>N°</th>
@@ -41,12 +41,12 @@
                     <th>Cargo</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-vendedor>
+            <ng-template pTemplate="body" let-funcionario>
                 <tr>
-                    <td>{{vendedor.id}}</td>
-                    <td>{{vendedor.nome}}</td>
-                    <td>{{vendedor.cpf}}</td>
-                    <td>{{vendedor.funcao}}</td>
+                    <td>{{funcionario.id}}</td>
+                    <td>{{funcionario.nome}}</td>
+                    <td>{{funcionario.cpf}}</td>
+                    <td>{{funcionario.funcao}}</td>
                 </tr>
             </ng-template>
         </p-table>
