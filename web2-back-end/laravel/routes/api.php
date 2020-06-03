@@ -1,5 +1,5 @@
 <?php
-use App\Vendedor;
+use App\Funcionario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +19,8 @@ use Illuminate\Support\Facades\Route;
     
     });*/
 
-    Route::GET('/vendedores', 'VendedorController@findAll');//chama a controler e o metodo
-    Route::GET('/vendedores/{id}', 'VendedorController@find');
-    Route::POST('/vendedores', 'VendedorController@create');
-    Route::DELETE('/vendedores/{id}', 'VendedorController@delete');
-    Route::PUT('vendedores/{id}', 'VendedorController@update');
+    Route::GET('/funcionarios', 'FuncionarioController@findAll');//chama a controler e o metodo
+    Route::GET('/funcionarios/{id}', 'FuncionarioController@find');
+    Route::POST('/funcionarios', 'FuncionarioController@create');
+    Route::DELETE('/funcionarios/{id}', 'FuncionarioController@delete');
+    Route::PUT('funcionarios/{id}', 'FuncionarioController@update');

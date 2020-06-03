@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-class VendedoresTableSeeder extends Seeder
+class FuncionarioTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class VendedoresTableSeeder extends Seeder
             ]);
         */
 
-        factory(\App\Models\Vendedor::class, 20)->create();
+        factory(\App\Models\Funcinario::class, 20)->create();
         
     }
 }
