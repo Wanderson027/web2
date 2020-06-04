@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-funcionario',
@@ -14,7 +13,7 @@ export class FuncionarioComponent implements OnInit {
 
   constructor(
     private http: HttpClient
-  ) { 
+  ) {
 
   }
 
@@ -23,18 +22,14 @@ export class FuncionarioComponent implements OnInit {
   }
 
 
-  private listarFuncionarios(){
+  private listarFuncionarios() {
     this.http.get(this.API_URL).subscribe(
-      res=>{
+      res => {
         this.Funcionarios = res;
         console.log(this.Funcionarios);
-       
+
       }
     )
   }
 }
-export class FormFieldAppearanceExample {
-  options: FormGroup;
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto');
-};
+

@@ -22,12 +22,8 @@
        <div class="ui-g-12">
             <p-button 
                 label="Cadastrar" 
-                styleClass="ui-button-success">
-            </p-button>
-            <p-button 
-                style="float: right;"
-                label="Sair" 
-                styleClass="ui-button-danger">
+                styleClass="ui-button-success"
+                [routerLink]="['/funcionario-form']">
             </p-button>
        </div>
     </div> 
@@ -35,7 +31,7 @@
         <p-table [value]="Funcionarios">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>N°</th>
+                    <th style="width: 70px;">Opções</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Cargo</th>
@@ -43,7 +39,10 @@
             </ng-template>
             <ng-template pTemplate="body" let-funcionario>
                 <tr>
-                    <td>{{funcionario.id}}</td>
+                    <td>
+                     <i class="far fa-edit" ng-click=""> </i>
+                     <i class="fas fa-trash-alt" ng-click=""></i>
+                    </td>
                     <td>{{funcionario.nome}}</td>
                     <td>{{funcionario.cpf}}</td>
                     <td>{{funcionario.funcao}}</td>
