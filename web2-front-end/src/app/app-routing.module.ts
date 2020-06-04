@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FuncionarioComponent } from './funcionario/funcionario.component';
-
 
 const routes: Routes = [
 
   { path: '', redirectTo: '/funcionario', pathMatch: 'full' },
-  { path: 'funcionario', component: FuncionarioComponent }
-
+  { path: 'funcionario', loadChildren: () => import('./funcionario/funcionario.module').then(m => m.FuncionarioModule) },
 ];
 
 

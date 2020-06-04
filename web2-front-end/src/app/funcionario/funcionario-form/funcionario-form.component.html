@@ -1,0 +1,16 @@
+<p>funcionario-form works!</p>
+<form [formGroup]="formulario" (ngSubmit)="salvarFuncionario()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" formControlName="nome">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="funcao">Funcao</label>
+      <input type="text" class="form-control" id="funcao" formControlName="funcao">
+    </div>
+    <div>
+        <button [disabled]="formulario" type="submit" value="Enviar"></button>
+    </div>
+</form>   
