@@ -1,15 +1,19 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\Models\Funcionario;
-use App\Models;
+
+use App\Model;
 use Faker\Generator as Faker;
+use App\Entity\Funcionario;
 
 $factory->define(Funcionario::class, function (Faker $faker) {
     return [
-        'id'=>  $faker->id,
         'nome' =>$faker->name,
-        'cpf' => $faker->ean8, 
-        'funcao' =>$faker->jobTitle,
+        'cpf' =>$faker->cpf,
+        'rg' =>$faker->rg,
+        'idade' =>$faker->unique()->numberBetween(16, 70),
+        'email' =>$faker->unique()->freeEmail,
+        'endereco' =>$faker->address,
+        'telefoneCelular' =>$faker->cellphonenumber,
     ];
 });

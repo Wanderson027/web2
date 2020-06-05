@@ -1,21 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Entity\Funcionario;
+
 class FuncionarioTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        /*Alunos::create([
-            'nome' => 'Maria das Dores'
-            ]);
-        */
-
-        factory(\App\Models\Funcinario::class, 20)->create();
-        
+        factory(Funcionario::class, 5)->create();
     }
 }
