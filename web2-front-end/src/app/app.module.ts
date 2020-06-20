@@ -14,16 +14,19 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { FuncionarioComponent } from './funcionario/funcionario.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
 import {FieldsetModule} from 'primeng/fieldset';
 import {ButtonModule} from 'primeng/button';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    FuncionarioComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import {ButtonModule} from 'primeng/button';
     TableModule,
     InputTextModule,
     FieldsetModule,
-    ButtonModule,
+    ButtonModule
 
   ],
   providers: [],
