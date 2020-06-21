@@ -30,7 +30,8 @@ export class FuncionarioComponent implements OnInit {
 public delete(funcionario: Funcionario){
   this.http.delete(this.API_URL+'/'+funcionario.id).subscribe(
     resultado => {
-      alert('Aluno excluido')
+      alert('Excluido com sucesso')
+      this.listarFuncionarios();
     }, erro =>{
       alert('erro ao excluir')
     })
@@ -49,10 +50,11 @@ public delete(funcionario: Funcionario){
 
   public salvar(){
     console.log(this.form.getRawValue())
-    this.http.post(this.API_URL, this.form.getRawValue).subscribe(
+    this.http.post(this.API_URL, this.form.value).subscribe(
       res => {
         alert("Adicionado com sucesso")
         this.listarFuncionarios();
+        this.reset();
       }, erro =>{
         alert("erro ao adicionar")
       }
@@ -85,6 +87,14 @@ public delete(funcionario: Funcionario){
     controls.nome.setValue(funcionario.nome);
     controls.cpf.setValue(funcionario.cpf);
     controls.funcao.setValue(funcionario.funcao);
+  }
+
+  public reset(){
+    const controls = this.form.controls;
+    controls.id.setValue("");
+    controls.nome.setValue("");
+    controls.cpf.setValue("");
+    controls.funcao.setValue("");
   }
  
 
