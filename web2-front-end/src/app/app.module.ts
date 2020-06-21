@@ -20,6 +20,7 @@ import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
 import {FieldsetModule} from 'primeng/fieldset';
 import {ButtonModule} from 'primeng/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -45,9 +46,11 @@ import {ButtonModule} from 'primeng/button';
     TableModule,
     InputTextModule,
     FieldsetModule,
-    ButtonModule
-
+    ButtonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

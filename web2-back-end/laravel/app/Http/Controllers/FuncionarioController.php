@@ -24,8 +24,7 @@ class FuncionarioController extends Controller
         return response()->json($funcionario);
     }
 
-    public function create(Request $request)
-    {   
+    public function create(Request $request){
         $funcionario = new Funcionario();
         $funcionario->fill($request->all());
         $funcionario->save();

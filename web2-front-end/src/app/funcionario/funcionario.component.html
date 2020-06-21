@@ -1,46 +1,50 @@
 <p-fieldset legend="Cadastrar Funcionario">
-    <div class="ui-g-12">   
-        <div class="ui-g-4">
-           <span class="ui-float-label">
-               <input id="float-input" type="text" size="40" pInputText> 
-               <label for="float-input">Nome</label>
-           </span>
-       </div>
-       <div class="ui-g-4 ui-lg-4 ui-md-12 ui-sm-12">
-           <span class="ui-float-label">
-               <input id="float-input" type="text" size="40" pInputText> 
-               <label for="float-input">CPF</label>
-           </span>
-       </div>       
-       <div class="ui-g-4 ui-lg-4 ui-md-12 ui-sm-12">
-           <span class="ui-float-label">
-               <input id="float-input" type="text" size="40" pInputText> 
-               <label for="float-input">Cargo</label>
-           </span>
-       </div>
-       
-       <div class="ui-g-12">
-            <p-button 
-                label="Cadastrar" 
-                styleClass="ui-button-success">
-            </p-button>
-            <p-button 
-                style="float: right;"
-                label="Remover" 
-                styleClass="ui-button-warming" (click)="delete({funcionario.id})" >
-            </p-button>
-            <p-button 
-                style="float: right;"
-                label="Sair" 
-                styleClass="ui-button-danger">
-            </p-button>
-       </div>
-    </div> 
+    <form [formGroup]="form" novalidate (submit)="salvar()">
+        <div class="p-col-12">
+            <div class="p-col-4">   
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="nome" pInputText> 
+                    <label for="float-input">Nome</label>
+                </span>
+            </div>
+            <div class="p-col-4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="cpf" pInputText> 
+                    <label for="float-input">Cpf</label>
+                </span>
+            </div>
+            <div class="p-col-4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="funcao" pInputText> 
+                    <label for="float-input">Função</label>
+                </span>
+            </div>       
+        </div>
+        <div class="p-col-12">
+                <p-button *ngIf="form.controls.id.value == null"
+                    label="Cadastrar" 
+                    styleClass="ui-button-success"
+                    type="submit">
+                </p-button>
+                <p-button 
+                    style="float: right;"
+                    label="Sair" 
+                    styleClass="ui-button-danger">
+                </p-button>
+        </div>
+    </form> 
+    <div>
+        <p-button *ngIf="form.controls.id.value"
+        label="Salvar" 
+        styleClass="ui-button-success"
+        (click)="update()">
+    </p-button>
+    </div>  
     <div>
         <p-table [value]="Funcionarios">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>N°</th>
+                    <th>Opções</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Cargo</th>
@@ -48,7 +52,18 @@
             </ng-template>
             <ng-template pTemplate="body" let-funcionario>
                 <tr>
-                    <td>{{funcionario.id}}</td>
+                    <td>
+                        <p-button 
+                            label="Deletar" 
+                            styleClass="ui-button-success"
+                            (onClick)="delete(funcionario)">
+                        </p-button>
+                        <p-button 
+                            label="Editar" 
+                            styleClass="ui-button-danger"
+                            (onClick)="editar(funcionario)">
+                        </p-button>
+                    </td>
                     <td>{{funcionario.nome}}</td>
                     <td>{{funcionario.cpf}}</td>
                     <td>{{funcionario.funcao}}</td>

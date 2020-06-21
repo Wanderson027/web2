@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
     
     });*/
 
-    Route::GET('/funcionarios', 'FuncionarioController@findAll');//chama a controler e o metodo
+    Route::GET('/funcionarios', 'FuncionarioController@findAll');
     Route::GET('/funcionarios/{id}', 'FuncionarioController@find');
     Route::POST('/funcionarios', 'FuncionarioController@create');
     Route::DELETE('/funcionarios/{id}', 'FuncionarioController@delete');
