@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
     Route::PUT('funcionarios/{id}', 'FuncionarioController@update');
 
 
-    /*
+/*
 |--------------------------------------------------------------------------
 | API Routes Peças
 |--------------------------------------------------------------------------    
@@ -38,7 +38,7 @@ use Illuminate\Support\Facades\Route;
     Route::DELETE('/pecas/{id}', 'PecaController@delete');
     Route::PUT('pecas/{id}', 'PecaController@update');
 
-       /*
+/*
 |--------------------------------------------------------------------------
 | API Routes Carros
 |--------------------------------------------------------------------------    
@@ -49,3 +49,15 @@ use Illuminate\Support\Facades\Route;
     Route::POST('/carros', 'CarroController@create');
     Route::DELETE('/carros/{id}', 'CarroController@delete');
     Route::PUT('carros/{id}', 'CarroController@update');
+
+/*
+|--------------------------------------------------------------------------
+| API Routes Carros
+|--------------------------------------------------------------------------    
+*/    
+
+    Route::GET('/servicos', 'ServicoController@findAll');
+    Route::GET('/servicos/{id}', 'ServicoController@find');
+    Route::POST('/servicos', 'ServicoController@create');
+    Route::DELETE('/servicos/{id}', 'ServicoController@delete');
+    Route::PUT('servicos/{id}', 'ServicoController@update');
