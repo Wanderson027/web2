@@ -1,24 +1,26 @@
 <p-fieldset legend="Cadastrar Funcionario">
     <form [formGroup]="form" novalidate (submit)="salvar()">
-        <div class="p-col-12">
-            <div class="p-col-4">   
+
+
+        <div class="p-fluid p-formgrid p-grid p-col-12">
+            <div class="p-field p-col 4">
                 <span class="ui-float-label">
                     <input id="float-input" type="text" size="40" formControlName="nome" pInputText> 
                     <label for="float-input">Nome</label>
                 </span>
             </div>
-            <div class="p-col-4">
+            <div class="p-field p-col 4">
                 <span class="ui-float-label">
                     <input id="float-input" type="text" size="40" formControlName="cpf" pInputText> 
                     <label for="float-input">Cpf</label>
                 </span>
             </div>
-            <div class="p-col-4">
+            <div class="p-field p-col 4">
                 <span class="ui-float-label">
                     <input id="float-input" type="text" size="40" formControlName="funcao" pInputText> 
                     <label for="float-input">Função</label>
                 </span>
-            </div>       
+            </div>
         </div>
         <div class="p-col-12">
                 <p-button *ngIf="form.controls.id.value == null"
