@@ -38,13 +38,13 @@
         </p-button>
     </div>  
     <div style="margin-top: 10px;">
-        <p-table [paginator]="true" [rows]="10" [value]="Funcionarios">
+        <p-table [paginator]="true" [rows]="5" [value]="Funcionarios">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Cargo</th>
-                    <th style="width: 200px; text-align: center;">Opções</th>
+                    <th style="width: 100px; text-align: center;">Opções</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-funcionario>
@@ -52,17 +52,15 @@
                     <td>{{funcionario.nome}}</td>
                     <td>{{funcionario.cpf}}</td>
                     <td>{{funcionario.funcao}}</td>
-                    <td>
+                    <td style="text-align: center;">
                         <p-button 
                             icon="pi pi-user-edit"
-                            label="Editar" 
-                            styleClass="ui-button-secondary ui-button-rounded"
+                            styleClass="ui-button-warning ui-button-rounded"
                             (onClick)="editar(funcionario)">
                         </p-button>
                         <p-button 
                             icon="pi pi-trash"
-                            label="Deletar" 
-                            styleClass="ui-button-secondary ui-button-rounded"
+                            styleClass="ui-button-danger ui-button-rounded"
                             (onClick)="delete(funcionario)">
                         </p-button>
                        
