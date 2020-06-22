@@ -52,7 +52,7 @@ use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| API Routes Carros
+| API Routes Serviços
 |--------------------------------------------------------------------------    
 */    
 
@@ -61,3 +61,27 @@ use Illuminate\Support\Facades\Route;
     Route::POST('/servicos', 'ServicoController@create');
     Route::DELETE('/servicos/{id}', 'ServicoController@delete');
     Route::PUT('servicos/{id}', 'ServicoController@update');
+
+/*
+|--------------------------------------------------------------------------
+| API Routes Lojas
+|--------------------------------------------------------------------------    
+*/     
+
+    Route::GET('/lojas', 'LojaController@findAll');
+    Route::GET('/lojas/{id}', 'LojaController@find');
+    Route::POST('/lojas', 'LojaController@create');
+    Route::DELETE('/lojas/{id}', 'LojaController@delete');
+    Route::PUT('lojas/{id}', 'LojaController@update');
+
+/*
+|--------------------------------------------------------------------------
+| API Routes Lojas
+|--------------------------------------------------------------------------    
+*/     
+
+    Route::GET('/clientes', 'ClienteController@findAll');
+    Route::GET('/clientes/{id}', 'ClienteController@find');
+    Route::POST('/clientes', 'ClienteController@create');
+    Route::DELETE('/clientes/{id}', 'ClienteController@delete');
+    Route::PUT('clientes/{id}', 'ClienteController@update');    
