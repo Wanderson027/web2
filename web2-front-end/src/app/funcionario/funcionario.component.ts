@@ -54,7 +54,7 @@ public delete(funcionario: Funcionario){
       res => {
         alert("Adicionado com sucesso")
         this.listarFuncionarios();
-        this.reset();
+        this.form.reset();
       }, erro =>{
         alert("erro ao adicionar")
       }
@@ -88,15 +88,6 @@ public delete(funcionario: Funcionario){
     controls.cpf.setValue(funcionario.cpf);
     controls.funcao.setValue(funcionario.funcao);
   }
-
-  public reset(){
-    const controls = this.form.controls;
-    controls.id.setValue("");
-    controls.nome.setValue("");
-    controls.cpf.setValue("");
-    controls.funcao.setValue("");
-  }
- 
 
 }
 

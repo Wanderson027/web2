@@ -1,5 +1,6 @@
 <?php
 use App\Funcionario;
+use App\Peca;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,15 @@ use Illuminate\Support\Facades\Route;
     Route::POST('/funcionarios', 'FuncionarioController@create');
     Route::DELETE('/funcionarios/{id}', 'FuncionarioController@delete');
     Route::PUT('funcionarios/{id}', 'FuncionarioController@update');
+
+
+    /*
+|--------------------------------------------------------------------------
+| API Routes Peças
+|--------------------------------------------------------------------------    
+*/
+    Route::GET('/pecas', 'PecaController@findAll');
+    Route::GET('/pecas/{id}', 'PecaController@find');
+    Route::POST('/pecas', 'PecaController@create');
+    Route::DELETE('/pecas/{id}', 'PecaController@delete');
+    Route::PUT('pecas/{id}', 'PecaController@update');
