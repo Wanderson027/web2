@@ -37,3 +37,15 @@ use Illuminate\Support\Facades\Route;
     Route::POST('/pecas', 'PecaController@create');
     Route::DELETE('/pecas/{id}', 'PecaController@delete');
     Route::PUT('pecas/{id}', 'PecaController@update');
+
+       /*
+|--------------------------------------------------------------------------
+| API Routes Carros
+|--------------------------------------------------------------------------    
+*/
+
+    Route::GET('/carros', 'CarroController@findAll');
+    Route::GET('/carros/{id}', 'CarroController@find');
+    Route::POST('/carros', 'CarroController@create');
+    Route::DELETE('/carros/{id}', 'CarroController@delete');
+    Route::PUT('carros/{id}', 'CarroController@update');
