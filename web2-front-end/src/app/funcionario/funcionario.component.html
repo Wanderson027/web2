@@ -1,7 +1,5 @@
 <p-fieldset legend="Cadastrar Funcionario">
     <form [formGroup]="form" novalidate (submit)="salvar()">
-
-
         <div class="p-fluid p-formgrid p-grid p-col-12">
             <div class="p-field p-col 4">
                 <span class="ui-float-label">
@@ -12,7 +10,7 @@
             <div class="p-field p-col 4">
                 <span class="ui-float-label">
                     <input id="float-input" type="text" size="40" formControlName="cpf" pInputText> 
-                    <label for="float-input">Cpf</label>
+                    <label for="float-input">CPF</label>
                 </span>
             </div>
             <div class="p-field p-col 4">
@@ -24,51 +22,51 @@
         </div>
         <div class="p-col-12">
                 <p-button *ngIf="form.controls.id.value == null"
+                    icon="pi pi-plus-circle"
                     label="Cadastrar" 
                     styleClass="ui-button-success"
                     type="submit">
-                </p-button>
-                <p-button 
-                    style="float: right;"
-                    label="Sair" 
-                    styleClass="ui-button-danger">
                 </p-button>
         </div>
     </form> 
     <div>
         <p-button *ngIf="form.controls.id.value"
-        label="Salvar" 
-        styleClass="ui-button-success"
-        (click)="update()">
-    </p-button>
+            icon="pi pi-check-circle"
+            label="Salvar" 
+            styleClass="ui-button-success"
+            (click)="update()">
+        </p-button>
     </div>  
-    <div>
-        <p-table [value]="Funcionarios">
+    <div style="margin-top: 10px;">
+        <p-table [paginator]="true" [rows]="10" [value]="Funcionarios">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Opções</th>
                     <th>Nome</th>
                     <th>CPF</th>
                     <th>Cargo</th>
+                    <th style="width: 200px; text-align: center;">Opções</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-funcionario>
                 <tr>
-                    <td>
-                        <p-button 
-                            label="Deletar" 
-                            styleClass="ui-button-success"
-                            (onClick)="delete(funcionario)">
-                        </p-button>
-                        <p-button 
-                            label="Editar" 
-                            styleClass="ui-button-danger"
-                            (onClick)="editar(funcionario)">
-                        </p-button>
-                    </td>
                     <td>{{funcionario.nome}}</td>
                     <td>{{funcionario.cpf}}</td>
                     <td>{{funcionario.funcao}}</td>
+                    <td>
+                        <p-button 
+                            icon="pi pi-user-edit"
+                            label="Editar" 
+                            styleClass="ui-button-secondary ui-button-rounded"
+                            (onClick)="editar(funcionario)">
+                        </p-button>
+                        <p-button 
+                            icon="pi pi-trash"
+                            label="Deletar" 
+                            styleClass="ui-button-secondary ui-button-rounded"
+                            (onClick)="delete(funcionario)">
+                        </p-button>
+                       
+                    </td>
                 </tr>
             </ng-template>
         </p-table>
