@@ -25,6 +25,7 @@ import { PecaComponent } from './peca/peca.component';
 import { CarroComponent } from './carro/carro.component';
 import { LojaComponent } from './loja/loja.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { ServicoComponent } from './servico/servico.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { ClienteComponent } from './cliente/cliente.component';
     CarroComponent,
     LojaComponent,
     ClienteComponent,
+    ServicoComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,8 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { FuncionarioComponent } from './funcionario/funcionario.component';
 import { PecaComponent } from './peca/peca.component';
 import { CarroComponent } from './carro/carro.component';
+import { ServicoComponent} from './servico/servico.component';
 import { LojaComponent } from './loja/loja.component';
 import { ClienteComponent } from './cliente/cliente.component';
+
 
 
 const routes: Routes = [
@@ -13,6 +15,7 @@ const routes: Routes = [
   { path: 'funcionario', component: FuncionarioComponent },
   { path: 'peca', component: PecaComponent },
   { path: 'carro', component: CarroComponent },
+  { path: 'servico', component: ServicoComponent},
   { path: 'loja', component: LojaComponent },
   { path: 'cliente', component: ClienteComponent },
 
@@ -20,8 +23,8 @@ const routes: Routes = [
 
 
 
-@NgModule({
+@NgModule({ 
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
-})
+  exports: [RouterModule] 
+  }) 
 export class AppRoutingModule { }
