@@ -40,8 +40,8 @@ public delete(carro: Carro){
     const group = {
       id: [null],
       nome: [null],
-      cpf: [null],
-      funcao: [null]
+      marca: [null],
+      cor: [null]
     };
 
     this.form = this.formBuilder.group(group);
