@@ -1,0 +1,72 @@
+<p-fieldset legend="Cadastrar Servico">
+    <form [formGroup]="form" novalidate (submit)="salvar()">
+        <div class="p-fluid p-formgrid p-grid p-col-12">
+            <div class="p-field p-col 4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="tipo" pInputText> 
+                    <label for="float-input">Tipo</label>
+                </span>
+            </div>
+            <div class="p-field p-col 4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="valor" pInputText> 
+                    <label for="float-input">Valor</label>
+                </span>
+            </div>
+            <div class="p-field p-col 4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="descricao" pInputText> 
+                    <label for="float-input">Descrição</label>
+                </span>
+            </div>
+        </div>
+        <div class="p-col-12">
+                <p-button *ngIf="form.controls.id.value == null"
+                    icon="pi pi-plus-circle"
+                    label="Cadastrar" 
+                    styleClass="ui-button-success"
+                    type="submit">
+                </p-button>
+        </div>
+    </form> 
+    <div>
+        <p-button *ngIf="form.controls.id.value"
+            icon="pi pi-check-circle"
+            label="Salvar" 
+            styleClass="ui-button-success"
+            (click)="update()">
+        </p-button>
+    </div>  
+    <div style="margin-top: 10px;">
+        <p-table [paginator]="true" [rows]="5" [value]="Servicos">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>
+                    <th style="width: 100px; text-align: center;">Opções</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-servico>
+                <tr>
+                    <td>{{servico.tipo}}</td>
+                    <td>{{servico.valor}}</td>
+                    <td>{{servico.descricao}}</td>
+                    <td style="text-align: center;">
+                        <p-button 
+                            icon="pi pi-user-edit"
+                            styleClass="ui-button-warning ui-button-rounded"
+                            (onClick)="editar(servico)">
+                        </p-button>
+                        <p-button 
+                            icon="pi pi-trash"
+                            styleClass="ui-button-danger ui-button-rounded"
+                            (onClick)="delete(servico)">
+                        </p-button>
+                       
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</p-fieldset>
