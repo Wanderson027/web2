@@ -23,6 +23,7 @@ import {ButtonModule} from 'primeng/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PecaComponent } from './peca/peca.component';
 import { CarroComponent } from './carro/carro.component';
+import { LojaComponent } from './loja/loja.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CarroComponent } from './carro/carro.component';
     FuncionarioComponent,
     PecaComponent,
     CarroComponent,
+    LojaComponent,
   ],
   imports: [
     BrowserModule,
