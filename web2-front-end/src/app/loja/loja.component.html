@@ -1,1 +1,72 @@
-<p>loja works!</p>
+<p-fieldset legend="Cadastrar Loja">
+    <form [formGroup]="form" novalidate (submit)="salvar()">
+        <div class="p-fluid p-formgrid p-grid p-col-12">
+            <div class="p-field p-col 4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="nome" pInputText> 
+                    <label for="float-input">Nome</label>
+                </span>
+            </div>
+            <div class="p-field p-col 4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="endereco" pInputText> 
+                    <label for="float-input">Endereço</label>
+                </span>
+            </div>
+            <div class="p-field p-col 4">
+                <span class="ui-float-label">
+                    <input id="float-input" type="text" size="40" formControlName="cnpj" pInputText> 
+                    <label for="float-input">CNPJ</label>
+                </span>
+            </div>
+        </div>
+        <div class="p-col-12">
+                <p-button *ngIf="form.controls.id.value == null"
+                    icon="pi pi-plus-circle"
+                    label="Cadastrar" 
+                    styleClass="ui-button-success"
+                    type="submit">
+                </p-button>
+        </div>
+    </form> 
+    <div>
+        <p-button *ngIf="form.controls.id.value"
+            icon="pi pi-check-circle"
+            label="Salvar" 
+            styleClass="ui-button-success"
+            (click)="update()">
+        </p-button>
+    </div>  
+    <div style="margin-top: 10px;">
+        <p-table [paginator]="true" [rows]="5" [value]="Lojas">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>CNPJ</th>
+                    <th style="width: 100px; text-align: center;">Opções</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-loja>
+                <tr>
+                    <td>{{loja.nome}}</td>
+                    <td>{{loja.endereco}}</td>
+                    <td>{{loja.cnpj}}</td>
+                    <td style="text-align: center;">
+                        <p-button 
+                            icon="pi pi-user-edit"
+                            styleClass="ui-button-warning ui-button-rounded"
+                            (onClick)="editar(loja)">
+                        </p-button>
+                        <p-button 
+                            icon="pi pi-trash"
+                            styleClass="ui-button-danger ui-button-rounded"
+                            (onClick)="delete(loja)">
+                        </p-button>
+                       
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</p-fieldset>
