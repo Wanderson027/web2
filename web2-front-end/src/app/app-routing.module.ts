@@ -5,11 +5,13 @@ import { PecaComponent } from './peca/peca.component';
 import { CarroComponent } from './carro/carro.component';
 import { LojaComponent } from './loja/loja.component';
 import { ClienteComponent } from './cliente/cliente.component';
+import { HomeComponent } from './home/home.component';
 
 
 const routes: Routes = [
 
-  { path: '', redirectTo: '/funcionario', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
   { path: 'funcionario', component: FuncionarioComponent },
   { path: 'peca', component: PecaComponent },
   { path: 'carro', component: CarroComponent },
