@@ -24,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PecaComponent } from './peca/peca.component';
 import { CarroComponent } from './carro/carro.component';
 import { LojaComponent } from './loja/loja.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { LojaComponent } from './loja/loja.component';
     PecaComponent,
     CarroComponent,
     LojaComponent,
+    ClienteComponent,
   ],
   imports: [
     BrowserModule,
