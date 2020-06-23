@@ -1,36 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import { Funcionario } from './funcionario.models';
+import { Peca } from './peca.models';
+;
 
 @Component({
-  selector: 'app-funcionario',
-  templateUrl: './funcionario.component.html',
-  styleUrls: ['./funcionario.component.css']
+  selector: 'app-peca',
+  templateUrl: './peca.component.html',
+  styleUrls: ['./peca.component.css']
 })
-export class FuncionarioComponent implements OnInit {
+export class PecaComponent implements OnInit {
 
-  private API_URL = 'http://127.0.0.1:8000/api/funcionarios';
-  public Funcionarios;
+  private API_URL = 'http://127.0.0.1:8000/api/pecas';
+  public Pecas;
   public form: FormGroup;
+
 
   constructor(
     private http: HttpClient,
-    private formBuilder:FormBuilder 
+    private formBuilder:FormBuilder
   ) { 
 
   }
 
   ngOnInit(): void {
     this.setForm();
-    this.listarFuncionarios();
+    this.listarPecas();
   }
 
-public delete(funcionario: Funcionario){
-  this.http.delete(this.API_URL+'/'+funcionario.id).subscribe(
+public delete(peca: Peca){
+  this.http.delete(this.API_URL+'/'+peca.id).subscribe(
     resultado => {
       alert('Excluido com sucesso')
-      this.listarFuncionarios();
+      this.listarPecas();
     }, erro =>{
       alert('erro ao excluir')
     })
@@ -40,8 +42,8 @@ public delete(funcionario: Funcionario){
     const group = {
       id: [null],
       nome: [null],
-      cpf: [null],
-      funcao: [null]
+      fabricante: [null],
+      quantidade: [null]
     };
 
     this.form = this.formBuilder.group(group);
@@ -52,7 +54,7 @@ public delete(funcionario: Funcionario){
     this.http.post(this.API_URL, this.form.value).subscribe(
       res => {
         alert("Adicionado com sucesso")
-        this.listarFuncionarios();
+        this.listarPecas();
         this.form.reset();
       }, erro =>{
         alert("erro ao adicionar")
@@ -61,38 +63,38 @@ public delete(funcionario: Funcionario){
   }
 
   public update(){
-    const funcionario = this.form.getRawValue();
-    this.http.put(this.API_URL+'/'+funcionario.id, funcionario).subscribe(
+    const peca = this.form.getRawValue();
+    this.http.put(this.API_URL+'/'+peca.id, peca).subscribe(
       res => {
         alert("Atualizado com sucesso")
-        this.listarFuncionarios();
+        this.listarPecas();
       }, erro =>{
         alert("erro ao Atualizar")
       }
     )
   }
 
-  public listarFuncionarios(){
+  public listarPecas(){
     this.http.get(this.API_URL).subscribe(
       res=>{
-        this.Funcionarios = res;
+        this.Pecas = res;
       }
     )
   }
 
-  public editar(funcionario: Funcionario){
+  public editar(peca: Peca){
     const controls = this.form.controls;
-    controls.id.setValue(funcionario.id);
-    controls.nome.setValue(funcionario.nome);
-    controls.cpf.setValue(funcionario.cpf);
-    controls.funcao.setValue(funcionario.funcao);
-  }
+    controls.id.setValue(peca.id);
+    controls.nome.setValue(peca.nome);
+    controls.fabricante.setValue(peca.fabricante);
+    controls.quantidade.setValue(peca.quantidade);
 
 }
-
+}
 
 export class FormFieldAppearanceExample {
   options: FormGroup;
   hideRequiredControl = new FormControl(false);
   floatLabelControl = new FormControl('auto');
 };
+
