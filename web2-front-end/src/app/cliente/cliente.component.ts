@@ -77,6 +77,7 @@ public delete(cliente: Cliente){
     this.http.get(this.API_URL).subscribe(
       res=>{
         this.Clientes = res;
+        console.log(res);
       }
     )
   }

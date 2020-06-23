@@ -26,6 +26,8 @@ import { CarroComponent } from './carro/carro.component';
 import { LojaComponent } from './loja/loja.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ServicoComponent } from './servico/servico.component';
+import { HomeComponent } from './home/home.component';
+
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { ServicoComponent } from './servico/servico.component';
     LojaComponent,
     ClienteComponent,
     ServicoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
