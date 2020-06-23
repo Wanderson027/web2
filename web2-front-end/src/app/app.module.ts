@@ -22,6 +22,7 @@ import {FieldsetModule} from 'primeng/fieldset';
 import {ButtonModule} from 'primeng/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PecaComponent } from './peca/peca.component';
+import { CarroComponent } from './carro/carro.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { PecaComponent } from './peca/peca.component';
     MenuComponent,
     FuncionarioComponent,
     PecaComponent,
+    CarroComponent,
   ],
   imports: [
     BrowserModule,
