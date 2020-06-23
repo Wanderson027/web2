@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'carro', component: CarroComponent },
   { path: 'loja', component: LojaComponent },
   { path: 'cliente', component: ClienteComponent },
-
 ];
 
 
