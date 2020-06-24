@@ -10,13 +10,27 @@
       text-align: center;"
       >Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="['/home']">Home <i style="padding: 10px;" class="fas fa-home"></i></a>
-      <a mat-list-item [routerLink]="['/funcionario']">Funcionarios <i style="padding: 10px;" class="fas fa-people-carry"></i></a>
-      <a mat-list-item [routerLink]="['/peca']">Peças <i style="padding: 10px;" class="fas fa-tools"></i></a>
-      <a mat-list-item [routerLink]="['/carro']">Carros <i style="padding: 10px;" class="fas fa-car"></i></a>
-      <a mat-list-item [routerLink]="['/servico']">Serviços <i style="padding: 10px;" class="fas fa-handshake"></i></a>
-      <a mat-list-item [routerLink]="['/loja']">Loja <i style="padding: 10px;" class="fas fa-store"></i></a>
-      <a mat-list-item [routerLink]="['/cliente']">Clientes <i style="padding: 10px;" class="fas fa-user-friends"></i></a>
+      <div class="mause">
+        <a mat-list-item [routerLink]="['/home']"><i style="padding: 10px;" class="fas fa-home"></i>Home </a>
+      </div>
+      <div class="mause">
+        <a mat-list-item [routerLink]="['/funcionario']"><i style="padding: 10px;" class="fas fa-people-carry"></i>Funcionarios </a>
+      </div>
+      <div class="mause">
+        <a mat-list-item [routerLink]="['/peca']"><i style="padding: 10px;" class="fas fa-tools"></i>Peças </a>
+      </div>
+      <div class="mause"> 
+        <a mat-list-item [routerLink]="['/carro']"><i style="padding: 10px;" class="fas fa-car"></i>Carros </a>
+      </div>
+      <div class="mause">
+        <a mat-list-item [routerLink]="['/servico']"><i style="padding: 10px;" class="fas fa-handshake"></i>Serviços </a>
+      </div>
+      <div class="mause">  
+        <a mat-list-item [routerLink]="['/loja']"><i style="padding: 10px;" class="fas fa-store"></i>Loja </a>
+      </div>
+      <div class="mause">
+        <a mat-list-item [routerLink]="['/cliente']"><i style="padding: 10px;" class="fas fa-user-friends"></i>Clientes </a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -29,8 +43,9 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <img src="../../imagens/imagensLogo.png">
-      <span>Moove </span> <span style="color: #035388;">Concessionárias</span>
+      <img style="width: 60px; height: 45px; padding-left:5px ;" src="assets/carrosLogo.png" >
+      <form action=""></form>
+      <span id="spanMoove" >Moove </span> <span id="spanConcessionarias">Concessionárias</span>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

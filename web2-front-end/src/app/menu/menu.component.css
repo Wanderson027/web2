@@ -33,3 +33,25 @@
   background: #363636;
   color: #fff;
 }
+
+.mause:hover {
+  background-color: #0294cd8e;
+  -webkit-animation: swing 1s ease;
+        animation: swing 1s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+  
+  
+}
+a:hover {
+  font-size: 20px;
+}
+#spanConcessionarias{
+  font-size: 25px;
+   color: #0292cd;
+   padding-left: 5px;
+}
+#spanMoove{
+  color: #fff;
+  font-size: 25px;
+}
