@@ -27,6 +27,7 @@ import { LojaComponent } from './loja/loja.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { ServicoComponent } from './servico/servico.component';
 import { HomeComponent } from './home/home.component';
+import {CarouselModule} from 'primeng/carousel';
 
 
 
@@ -61,7 +62,8 @@ import { HomeComponent } from './home/home.component';
     FieldsetModule,
     ButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule
   ],
   
   providers: [],
