@@ -38,7 +38,10 @@
         </p-button>
     </div>  
     <div style="margin-top: 10px;">
-        <p-table [paginator]="true" [rows]="5" [value]="Servicos">
+        <p-table [paginator]="true" [rows]="12" [value]="Servicos">
+            <ng-template pTemplate="caption">
+                Lista de Serviços
+            </ng-template>
             <ng-template pTemplate="header">
                 <tr>
                     <th>Tipo</th>

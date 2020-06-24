@@ -1,4 +1,4 @@
-<p-fieldset legend="Cadastrar Carros">
+<p-fieldset legend="Cadastrar Carro">
     <form [formGroup]="form" novalidate (submit)="salvar()">
         <div class="p-fluid p-formgrid p-grid p-col-12">
             <div class="p-field p-col 4">
@@ -38,7 +38,7 @@
         </p-button>
     </div>  
     <div style="margin-top: 10px;">
-        <p-table  [paginator]="true" [rows]="8" [value]="Carros">
+        <p-table  [paginator]="true" [rows]="12" [value]="Carros">
             <ng-template pTemplate="caption">
                 Lista de Carros
             </ng-template>

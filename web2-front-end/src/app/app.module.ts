@@ -28,6 +28,8 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { ServicoComponent } from './servico/servico.component';
 import { HomeComponent } from './home/home.component';
 import {CarouselModule} from 'primeng/carousel';
+import { Injectable } from '@angular/core';
+import { Message } from 'primeng/api';
 
 
 
@@ -63,7 +65,7 @@ import {CarouselModule} from 'primeng/carousel';
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    CarouselModule
+    CarouselModule,
   ],
   
   providers: [],
